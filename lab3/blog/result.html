@@ -1,0 +1,36 @@
+<html>
+	<head>
+		{% load staticfiles %}
+
+		<title>search_result</title>
+	</head>
+	<body>
+	<hr />
+	<table id="resultlist">
+		<tr>
+		<th colspan=11>get{{ result_len }}record
+		</tr>
+
+			<tr>
+				
+				<th>ISBN</th>
+				<th>Title</th>
+				
+			
+				
+			</tr>
+			{% for Book in result_list %}
+			
+				
+				<td>{{ Book.ISBN }}</td>
+				<td>{{ Book.Title }}</td>
+				
+			</tr>
+			{% endfor %}
+
+	</table>
+	<div id="singlebutton">
+		<font size = 5><a href="/"></a></font></div>
+	<hr />
+	</body>
+</html>

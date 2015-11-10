@@ -1,0 +1,42 @@
+<html>
+	<head>
+		{% load staticfiles %}
+		
+		<title>click_result</title>
+	</head>
+<body>
+<hr />
+	<table id="bookandauthorlist">
+
+			<tr>
+				
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>AuthorName</th>
+				<th>publisher</th>
+				<th>PublishDate</th>
+				<th>Price</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Country</th>
+			</tr>
+			
+				
+				<td>{{ Book.ISBN }}</td>
+				<td>{{ Book.Title }}</td>
+				<td>{{ Author.Name }}</td>
+				<td>{{ Book.Publisher}}</td>
+				<td>{{ Book.PublishDate }}</td>
+				<td>{{ Book.Price}}</td>
+
+				<td>{{ Author.Name }}</td>
+				<td>{{ Author.Age }}</td>
+				<td>{{ Author.Country }}</td>
+				
+				
+			</tr>
+		
+	</table>
+	<hr />
+</body>
+</html>

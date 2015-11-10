@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	
+	<title>book</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<hr />
+<!-- header end -->
+<!-- sidebar begin -->
+<div id="sidebar">
+	<div class="widget">
+	<form action="/search/" method="get">
+		<div class="title">please input Name </div>
+		<input class="text" type="text" name="word" value="input_Name" onFocus="if(value=='input_Name') {value=''}" onBlur="if(value=='') {value='input_Name'}">
+		<input type="submit" value="search" class="submit">
+	</form>
+	</div>
+	
+	<div class="widget">
+	  <div id="widgetuserurl"><a href="/accounts/changepassword/"></a></div>
+  </div>
+	
+</div>
+<!-- sidebar end -->
+<div id="content">
+<div id="singlebutton">
+	<a href="/add/"></a></div>
+
+<table id="Book_list">
+	<tr>
+		<th>number</th>
+		<th>Title</th>
+		<th colspan=1>operation</th>
+	</tr>
+	{% for Book in Book_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>
+		<td>{{ forloop.counter }}</td>
+		
+		<td><a href="/click_result/?id={{Book.id}}">{{ Book.Title }}</a></td>
+		<td><a href="/delete/?id={{Book.id}}">delete</a></td>
+	</tr>
+	{% endfor %}
+</table>
+
+</div>
+</body>
+</html>
