@@ -22,7 +22,7 @@ def current_datetime(request):
     return HttpResponse(html)
 
 '''
-def showrecord(request):
+def showrecord(requestttt):
     
 	Book_list = Book.objects.all()
 	c = Context({"Book_list": Book_list })
